@@ -6,6 +6,13 @@ Shopping Cart application! This app allows you to browse a wide range of product
 
 This is a practice project to practice Hooks, Routing, Context API and Local Storage Concepts.
 
+- Design a basic shopping cart application where users can add items to a cart.
+- Use local storage to store the cart items across sessions (consider a more robust solution like cookies or a database for real-world scenarios).
+- The Context API can help manage the cart data throughout the app.
+- Implement React Router for routing between product listings and the cart view.
+- Explore hooks (useState, useEffect) for state management and local storage operations.
+- (Optional) Introduce user authentication to personalize the shopping experience and enable features like saved carts.
+
 ## Key Features
 
 ### Product Listing Page
