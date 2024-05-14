@@ -1,5 +1,6 @@
 import {Link, NavLink} from "react-router-dom";
 import {useMenu} from "../../contexts/index.js";
+import Profile from "./Profile.jsx";
 
 
 export default function Navbar(){
@@ -10,7 +11,7 @@ export default function Navbar(){
     };
     return(
             <>
-                <header className={`shadow shadow-purple-700 z-50 sticky top-0 w-screen inset-x-0
+                <header className={`z-50 sticky top-0 w-screen inset-x-0
                     ${isMenuOpen ? 'opacity-80 backdrop-blur-3xl' : '' }`}>
                     <nav className='bg-[#2E42F8] px-4 lg:px-6 py-2.5'>
                         <div className='flex flex-wrap justify-between items-center mx-auto max-w-screen-xl'>
@@ -78,6 +79,9 @@ export default function Navbar(){
                                 </ul>
                             </div>
                             <div className='flex gap-x-3'>
+
+                                <Profile />
+
                                 <button>
                                     <svg aria-hidden="true" className="w-8"
                                          focusable="false" viewBox="0 0 24 24" role="img" fill="none"
