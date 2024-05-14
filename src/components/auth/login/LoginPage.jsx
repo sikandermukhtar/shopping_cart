@@ -11,13 +11,13 @@ export default function LoginPage(){
                 <form className='flex flex-col gap-y-4 items-center'>
                     <input
                         className='border-2 border-black text-l w-80 rounded-lg h-10 p-2'
-                        name="email"
+                        name="email" required
                         placeholder="Email*"
                         type="email"
                     />
                     <input
                         className='border-2 border-black text-l w-80 rounded-lg h-10 p-2'
-                        name="email"
+                        name="password" required
                         placeholder="Password*"
                         type="password"
                     />
