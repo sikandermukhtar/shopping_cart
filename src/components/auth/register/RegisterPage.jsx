@@ -45,12 +45,12 @@ export default function RegisterPage(){
                     <div className='relative flex flex-col'>
 
                         <input
+                            id="email"
                             className='border-b-2 border-black text-l w-80 h-10 p-2
                             focus:outline-none focus:border-rose-600 placeholder-transparent
                             peer
                             '
                             name="email" required
-                            id="email"
                             placeholder="Email Address"
                             type="email"
                             value={email}
@@ -63,12 +63,13 @@ export default function RegisterPage(){
                                peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm
                                '
                         >Email Address</label>
-
                     </div>
-                    <div>
+
+                    <div className='relative flex flex-col mt-4'>
                         <input
-                            className='border-b-2 border-black text-l w-80 rounded-lg h-10 p-2
-                            focus:outline-none focus:border-rose-600
+                            id="password"
+                            className='peer border-b-2 border-black text-l w-80 h-10 p-2
+                            focus:outline-none focus:border-rose-600 placeholder-transparent
                             '
                             name="password" required
                             placeholder="New Password"
@@ -76,8 +77,15 @@ export default function RegisterPage(){
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
+                        <label htmlFor="password"
+                        className='absolute -top-3.5 text-sm pl-2 text-gray-600 transition-all
+                        peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400
+                        peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm
+                        '
+                        >Password</label>
                     </div>
-                    <div>
+
+                    <div className='relative flex flex-col'>
                         <input
                             className='border-b-2 border-black text-l w-80 rounded-lg h-10 p-2
                             focus:outline-none focus:border-rose-600
