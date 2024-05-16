@@ -56,7 +56,7 @@ export default function RegisterPage(){
                             onChange={(e) => setEmail(e.target.value)}
                         />
                         <label htmlFor="email"
-                               className='pl-2 absolute left-0 -top-3.5 text-gray-600 text-sm
+                               className='pl-2 absolute -top-3.5 text-gray-600 text-sm
                                peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400
                                peer-placeholder-shown:top-2 transition-all
                                peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm
@@ -110,7 +110,7 @@ export default function RegisterPage(){
                 <p className='text-l text-gray-500 font-sans font-normal px-8 py-6'>Already have an account?
                     <a
                         className='underline ml-2 hover:text-[#2E42F8]'
-                        href={"/arch/register"}>Login Here!
+                        href={"/arch/login"}>Login Here!
                     </a>
                 </p>
             </div>
