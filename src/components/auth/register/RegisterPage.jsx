@@ -43,7 +43,6 @@ export default function RegisterPage(){
                 <p className='text-3xl font-sans font-normal px-8 py-6'>Enter your email and password.</p>
                 <form className='flex flex-col gap-y-4 items-center' onSubmit={register}>
                     <div className='relative flex flex-col'>
-
                         <input
                             id="email"
                             className='border-b-2 border-black text-l w-80 h-10 p-2
@@ -65,7 +64,7 @@ export default function RegisterPage(){
                         >Email Address</label>
                     </div>
 
-                    <div className='relative flex flex-col mt-4'>
+                    <div className='relative flex flex-col mt-2'>
                         <input
                             id="password"
                             className='peer border-b-2 border-black text-l w-80 h-10 p-2
@@ -85,10 +84,11 @@ export default function RegisterPage(){
                         >Password</label>
                     </div>
 
-                    <div className='relative flex flex-col'>
+                    <div className='relative flex flex-col mt-2'>
                         <input
-                            className='border-b-2 border-black text-l w-80 rounded-lg h-10 p-2
-                            focus:outline-none focus:border-rose-600
+                            id="confirmPassword"
+                            className='peer border-b-2 border-black text-l w-80 h-10 p-2
+                            focus:outline-none focus:border-rose-600 placeholder-transparent
                             '
                             name="confirmPassword" required
                             placeholder="Confirm New Password"
@@ -96,6 +96,12 @@ export default function RegisterPage(){
                             value={confirmPassword}
                             onChange={(e) => setConfirmPassword(e.target.value)}
                         />
+                        <label htmlFor="confirmPassword"
+                        className='absolute -top-3.5 text-gray-600 text-sm pl-2 transition-all
+                        peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400
+                        peer-focus:text-sm peer-focus:-top-3.5 peer-focus:text-gray-600
+                        '
+                        >Confirm Password</label>
                     </div>
                     <button type="submit" className="ml-56 bg-black w-24 text-white rounded-3xl p-2">
                         Continue
