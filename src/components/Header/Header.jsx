@@ -8,7 +8,6 @@ export default function Header(){
 
     const toggleMenu = () => {
         setIsMenuOpen((prev) => !prev);
-
     };
     return(
         <MenuProvider value={{isMenuOpen, toggleMenu}}>
