@@ -2,10 +2,12 @@ import {createUserWithEmailAndPassword} from "firebase/auth"
 import {useState} from "react";
 import {useNavigate} from "react-router";
 import { auth} from "../../../firebase/firebase.js";
+import {useAuth} from "../../../contexts/authContext/AuthContext.js";
 
 export default function RegisterPage(){
 
     const navigate = useNavigate();
+    const { setCurrentUserFunction } = useAuth();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
@@ -18,6 +20,7 @@ export default function RegisterPage(){
                 .then((userCredential) => {
 
                     const user = userCredential.user;
+                    setCurrentUserFunction(user);
                     setEmail('')
                     setPassword('')
                     setConfirmPassword('')
