@@ -7,7 +7,7 @@ export default function MenuSlider(){
     return(
 
         <>
-            <div className={`fixed top-0 right-0 z-50 h-screen bg-white ${isMenuOpen ? '' : 'hidden'} w-80 shadow-2xl shadow-black`}>
+            <div className={`fixed top-0 right-0 z-50 h-screen bg-white ${isMenuOpen ? '' : 'hidden'} w-80 shadow-2xl lg:hidden shadow-black`}>
                 <div className='px-2 py-2.5 flex justify-end'>
                     <button className='' onClick={toggleMenu}>
                         <svg aria-hidden="true" className="w-8" focusable="false" viewBox="0 0 24 24" role="img"
