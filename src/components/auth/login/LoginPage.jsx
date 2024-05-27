@@ -1,13 +1,39 @@
-
+import {useAuth} from "../../../contexts/authContext/AuthContext.js";
+import { auth} from "../../../firebase/firebase.js";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import {useState} from "react";
+import {useNavigate} from "react-router";
 export default function LoginPage(){
 
+    const navigate = useNavigate();
+
+    const {setCurrentUser} = useAuth();
+    const[email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const login = (e) => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                setCurrentUserFunction(user)
+                console.log(user)
+                setEmail('')
+                setPassword('')
+                navigate("/");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
 
 
+    }
     return(
         <>
             <div className='flex flex-col items-center'>
                 <p className='text-3xl font-sans font-normal px-8 py-6'>Enter your email and password.</p>
-                <form className='flex flex-col gap-y-4 items-center'>
+                <form className='flex flex-col gap-y-4 items-center' onSubmit={login}>
                     <div className="relative flex flex-col">
                         <input
                             id="email"
@@ -16,6 +42,8 @@ export default function LoginPage(){
                             name="email" required
                             placeholder="Email"
                             type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                         <label htmlFor="email"
                         className='absolute text-sm -top-3.5 pl-2 text-gray-600 transition-all
@@ -32,6 +60,8 @@ export default function LoginPage(){
                             name="password" required
                             placeholder="Password"
                             type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                         <label htmlFor="password"
                                className='absolute text-sm -top-3.5 pl-2 text-gray-600 transition-all
