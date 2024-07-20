@@ -11,6 +11,7 @@ import {db} from "./firebase/firebase.js";
 import {query, collection, onSnapshot} from "firebase/firestore";
 import Favourites from "./components/User/Favourites.jsx";
 import Product from "./components/Product/Product.jsx";
+import ListProduct from "./components/Product/ListProduct.jsx";
 
 export default function App(){
   const [currentUser, setCurrentUser] = useState('');
@@ -52,7 +53,9 @@ export default function App(){
               <Route path='login/' element={<LoginPage />} />
               <Route path='register/' element={<RegisterPage />} />
             </Route>
-            <Route path={'product/'} element={<Product/>}></Route>
+            <Route path={'product/'} element={<Product/>}>
+                <Route path={'list-new-product/'} element={<ListProduct />}></Route>
+            </Route>
             <Route path={'favourites/'} element={<Favourites/>}></Route>
           </Route>
       )
