@@ -7,7 +7,7 @@ export default function LoginPage(){
 
     const navigate = useNavigate();
 
-    const {setCurrentUser, currentUser} = useAuth();
+    const {setCurrentUserFunction, currentUser} = useAuth();
     const[email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const login = (e) => {
@@ -18,6 +18,7 @@ export default function LoginPage(){
                 const user = userCredential.user;
                 setCurrentUserFunction(user)
                 console.log(user)
+
                 setEmail('')
                 setPassword('')
                 navigate("/");
@@ -32,7 +33,10 @@ export default function LoginPage(){
     return(
         <>
             { currentUser ? (
-                <p>Already signed in.</p>
+                <div>
+                    <p>Already signed in.</p>
+                    <p>Hello, {currentUser.email}</p>
+                </div>
             ) :
                 (
                     <div className='flex flex-col items-center'>
